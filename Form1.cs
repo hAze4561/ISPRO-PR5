@@ -187,16 +187,7 @@ namespace ПР5
         {
             try
             {
-                string expression = txtResult.Text
-                    .Replace("sqrt", "Math.Sqrt")
-                    .Replace("sin", "Math.Sin")
-                    .Replace("cos", "Math.Cos")
-                    .Replace("tan", "Math.Tan")
-                    .Replace("ln", "Math.Log")
-                    .Replace("log", "Math.Log10")
-                    .Replace("abs", "Math.Abs")
-                    .Replace("^2", "*" + txtResult.Text) // упрощенное возведение в квадрат
-                    .Replace(",", ".");
+                string expression = txtResult.Text.Replace(",", ".");
 
                 var result = new System.Data.DataTable().Compute(expression, null);
                 memory = Convert.ToDouble(result);
